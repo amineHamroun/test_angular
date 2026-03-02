@@ -1,0 +1,35 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Angular / build
+dist/
+build/
+.angular/
+
+# Environment
+.env
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# coverage
+coverage/
+
+# npm cache
+.npm
+
+# local folders
+/backresidence/node_modules/
+/med_amine_hamrouni/node_modules/
