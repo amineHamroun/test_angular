@@ -1,0 +1,60 @@
+<div class="container mt-4" *ngIf="!loading; else loadingTpl">
+  <h2>Mettre à jour la résidence</h2>
+
+  <form #resForm="ngForm" (ngSubmit)="onSubmit(resForm)" class="mt-3">
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        required
+        [(ngModel)]="residence.name" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Adresse</label>
+      <input
+        type="text"
+        name="address"
+        class="form-control"
+        required
+        [(ngModel)]="residence.address" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image (URL)</label>
+      <input
+        type="text"
+        name="image"
+        class="form-control"
+        [(ngModel)]="residence.image" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <select
+        name="status"
+        class="form-select"
+        required
+        [(ngModel)]="residence.status">
+        <option value="">-- Choisir --</option>
+        <option value="Disponible">Disponible</option>
+        <option value="Complet">Complet</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary me-2" [disabled]="resForm.invalid">
+      Mettre à jour
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Annuler
+    </button>
+  </form>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="container mt-4">
+    <p>Chargement...</p>
+  </div>
+</ng-template>

@@ -1,0 +1,31 @@
+<div class="container mt-4" *ngIf="id != null">
+  <div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+      Confirmation de suppression
+    </div>
+    <div class="card-body">
+      <p>Voulez-vous vraiment supprimer la résidence avec l'identifiant <strong>{{ id }}</strong> ?</p>
+      <p class="text-danger mb-3">Cette action est définitive.</p>
+
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error }}
+      </div>
+
+      <button class="btn btn-danger me-2" (click)="confirmDelete()" [disabled]="loading">
+        Oui, supprimer
+      </button>
+      <button class="btn btn-secondary" (click)="cancel()" [disabled]="loading">
+        Annuler
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4" *ngIf="id == null">
+  <div class="alert alert-danger">
+    Identifiant invalide.
+  </div>
+  <button class="btn btn-secondary" (click)="cancel()">
+    Retour à la liste
+  </button>
+</div>

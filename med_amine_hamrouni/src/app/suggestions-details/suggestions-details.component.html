@@ -1,0 +1,8 @@
+<div *ngIf="suggestion">
+  <p><strong>Title:</strong> {{ suggestion.title }}</p>
+  <p><strong>Description:</strong> {{ suggestion.description }}</p>
+  <p><strong>Category:</strong> {{ suggestion.category }}</p>
+  <p><strong>Date:</strong> {{ suggestion.date | date:'medium' }}</p>
+  <p><strong>Status:</strong> {{ suggestion.status }}</p>
+  <p><strong>Likes:</strong> {{ suggestion.nbLikes }}</p>
+</div>
